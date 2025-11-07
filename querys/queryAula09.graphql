@@ -9,7 +9,6 @@ query {
   usuarios {
     ...usuarioCompleto
   }
-
 }
 
 fragment usuarioCompleto on Usuario {
@@ -17,6 +16,7 @@ fragment usuarioCompleto on Usuario {
   telefone
   email
   perfil {
-    id descricao
+    id
+    descricao
   }
 }

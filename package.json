@@ -1,9 +1,9 @@
 {
   "name": "graphql-estudos",
   "version": "1.0.0",
-  "main": "aula09.js",
+  "main": "aula10.js",
   "scripts": {
-    "start": "nodemon aula09.js"
+    "start": "nodemon aula10.js"
   },
   "author": "Diego Silveira",
   "license": "MIT",
