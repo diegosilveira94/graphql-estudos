@@ -41,6 +41,7 @@ const typeDefs = gql`
 	type Query {
 		usuario(id: Int): Usuario
         perfis: [Perfil]
+        usuarios: [Usuario]
 	}
 `;
 
@@ -58,9 +59,10 @@ const resolvers = {
         },
         perfis() {
 
-            return db.perfis;
+            return db.perfis.find((p) => p.id === this.usuario.perfil);
         },
-    }
+        usuarios:() => db.usuarios,
+    },
 }
 
 const server = new ApolloServer({
