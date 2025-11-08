@@ -1,5 +1,5 @@
 const { gql, ApolloServer } = require("apollo-server");
-
+// Aula de Enums
 const db = {
   usuarios: [
     {
