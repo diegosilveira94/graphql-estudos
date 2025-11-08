@@ -1,9 +1,9 @@
 {
   "name": "graphql-estudos",
   "version": "1.0.0",
-  "main": "aula10.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon aula10.js"
+    "start": "nodemon"
   },
   "author": "Diego Silveira",
   "license": "MIT",
@@ -11,6 +11,7 @@
   "dependencies": {
     "apollo-server": "^3.13.0",
     "graphql": "^16.12.0",
+    "graphql-tools": "^9.0.22",
     "nodemon": "^3.1.10",
     "prettier": "^3.6.2"
   },
