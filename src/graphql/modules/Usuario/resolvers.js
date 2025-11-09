@@ -19,28 +19,41 @@ module.exports = {
     },
   },
   Query: {
-    usuario: (_, args) => {
-      return db.usuarios.find((db) => db.id === args.id);
+    usuario: (_, data) => {
+      return db.usuarios.find((db) => db.id === data.id);
     },
     usuarios: () => db.usuarios,
   },
   Mutation: {
-    criarUsuario(_, args) {
-      const { email } = args;
+    criarUsuario(_, { data }) {
+      const { email } = data;
 
       const usuarioExistente = db.usuarios.some((u) => u.email === email);
 
       if (usuarioExistente) {
-        throw new Error(`Usuáro Existente : ${args.nome}`);
+        throw new Error(`Usuáro Existente : ${data.nome}`);
       }
 
       const novoUsuario = {
-        ...args,
+        ...data,
         id: geradorDeId(db.usuarios),
         perfil_id: 2,
       };
 
       db.usuarios.push(novoUsuario);
+
+      return novoUsuario;
+    },
+    atualizarUsuario(_, { id, data }) {
+      const usuario = db.usuarios.find((u) => u.id === id);
+      const indice = db.usuarios.findIndex((u) => u.id === id);
+
+      const novoUsuario = {
+        ...usuario,
+        ...data,
+      };
+
+      db.usuarios.splice(indice, 1, novoUsuario);
 
       return novoUsuario;
     },
