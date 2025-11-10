@@ -1,0 +1,15 @@
+{
+  usuario(
+    filtro: {
+      #id: 1 or
+      email: "maria@gmail.com"
+    }
+  ) {
+    id
+    nome
+  }
+}
+
+mutation {
+  deletarUsuario(filtro: { email: "maria@gmail.com" })
+}
