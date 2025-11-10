@@ -1,7 +1,0 @@
-# Aula de Operation Name
-
-query PedidoDeVenda {
-  usuarios {
-    nome
-  }
-}

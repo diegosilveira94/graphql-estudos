@@ -1,0 +1,10 @@
+type Contato {
+  id: Int
+  nome: String
+  email: String
+  telefone: String
+}
+
+type Query {
+  contatos: [contato]
+}
