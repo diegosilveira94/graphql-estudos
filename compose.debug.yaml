@@ -1,6 +1,0 @@
-services:
-  graphqlestudos:
-    image: graphqlestudos
-    build:
-      context: .
-      dockerfile: ./Dockerfile

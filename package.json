@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "sucrase-node src/index.ts"
   },
   "author": "Diego Silveira",
   "license": "MIT",
@@ -23,5 +23,8 @@
     "prettier": "^3.6.2",
     "rxjs": "^7.3.0"
   },
-  "repository": "git@github.com:diegosilveira94/graphql-estudos.git"
+  "repository": "git@github.com:diegosilveira94/graphql-estudos.git",
+  "devDependencies": {
+    "sucrase": "^3.35.0"
+  }
 }
