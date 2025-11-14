@@ -3,6 +3,9 @@ module.exports = {
     async tasks(_, __, { dataSources, user_id }) {
       return await dataSources.tasksService.getTasks(user_id);
     },
+    async task(_, { id }, { dataSources, user_id }) {
+      return await dataSources.tasksService.getTaskById(user_id, id);
+    },
   },
   Mutation: {
     async createTask(_, { data }, { dataSources, user_id }) {
