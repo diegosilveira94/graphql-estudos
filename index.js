@@ -1,11 +1,15 @@
 const { ApolloServer } = require("apollo-server");
 const graphql = require("./src/graphql");
 const GitHubService = require("./src/services/GitHub.services");
+const UserRegisterService = require("./src/services/UserRegisterService");
+const TasksRegisterService = require("./src/services/TasksRegisterService");
 
 const server = new ApolloServer({
   ...graphql,
   dataSources: () => ({
     gitHubService: GitHubService,
+    userRegisterService: UserRegisterService,
+    tasksService: TasksRegisterService,
   }),
 });
 
