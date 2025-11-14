@@ -137,3 +137,12 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Docker volumes (se usar volumes locais)
+volumes/
+data/
+
+# Database files (se usar SQLite localmente para testes)
+*.sqlite
+*.sqlite3
+*.db

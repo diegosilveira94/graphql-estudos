@@ -1,4 +1,5 @@
 const { RESTDataSource } = require("apollo-datasource-rest");
+const UserNotFoundError = require("../errors/UserNotFoundError");
 
 class GitHubService extends RESTDataSource {
   constructor() {
@@ -7,7 +8,13 @@ class GitHubService extends RESTDataSource {
   }
 
   async getUser(login) {
-    return await this.get(`/users/${login}`);
+    try {
+      return await this.get(`/users/${login}`);
+    } catch (e) {
+      if (e.extensions.response.status === 404)
+        throw new UserNotFoundError("Usuário não encontrado!: " + login);
+      throw new Error(e);
+    }
   }
 }
 
