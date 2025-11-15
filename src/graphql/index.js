@@ -10,3 +10,14 @@ export const GET_CONTATOS = gql`
     }
   }
 `;
+
+export const ADD_CONTATO = gql`
+  mutation criarContato($data: ContatoInput!) {
+    criarContato(data: $data) {
+      id
+      nome
+      email
+      telefone
+    }
+  }
+`;
