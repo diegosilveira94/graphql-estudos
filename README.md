@@ -1,6 +1,6 @@
 # GraphQL Contatos
 
-Estudos de GraphQL com o curso do Washington Developer -> [link](https://www.youtube.com/playlist?list=PLK5FPzMuRKlyeZYiJNA54j4lpfxHGlz0j) e documentações.
+Estudos de GraphQL com o curso do Washington Developer([link](https://www.youtube.com/playlist?list=PLK5FPzMuRKlyeZYiJNA54j4lpfxHGlz0j)) e documentações.
 
 > **📚 Aulas divididas por branches:** Cada aula do curso está em uma branch separada do repositório. Para acessar uma aula específica, faça checkout da branch correspondente (ex: `aula30/adding-contacts-autoreflesh`, `aula31/removing-contacts`, `aula32/updating-contacts`).
 
