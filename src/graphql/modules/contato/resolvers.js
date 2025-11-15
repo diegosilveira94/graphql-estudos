@@ -1,6 +1,3 @@
-const {
-  Mutation,
-} = require("../../../../../SemPostgreAntesAula17/src/graphql/modules/Usuario/resolvers");
 const db = require("../../../db");
 
 module.exports = {
