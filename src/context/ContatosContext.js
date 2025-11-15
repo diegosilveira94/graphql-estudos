@@ -1,12 +1,28 @@
 import React, { useContext } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { ADD_CONTATO, GET_CONTATOS } from "../graphql";
+import { ADD_CONTATO, GET_CONTATOS, REMOVE_CONTATO } from "../graphql";
 
 const MyContext = React.createContext();
 
+const cacheCreate = {
+  update(cache, { data }) {
+    const newContatoResponse = data?.criarContato;
+    const existiongContatos = cache.readQuery({ query: GET_CONTATOS });
+
+    cache.writeQuery({
+      query: GET_CONTATOS,
+      data: {
+        contatos: [...existiongContatos.contatos, newContatoResponse],
+      },
+    });
+  },
+};
+
 export default function ContatosContextProvider({ children }) {
   const { data, loading, refetch } = useQuery(GET_CONTATOS);
-  const [criarContato] = useMutation(ADD_CONTATO);
+  const [criarContato] = useMutation(ADD_CONTATO, cacheCreate);
+  const [deletarContato] = useMutation(REMOVE_CONTATO);
+  const [] = useMutation(REMOVE_CONTATO);
   return (
     <MyContext.Provider
       value={{
@@ -14,6 +30,7 @@ export default function ContatosContextProvider({ children }) {
           itens: data ? data.contatos : [],
           loading,
           criarContato,
+          deletarContato,
           refetch,
         },
       }}
